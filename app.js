@@ -23,7 +23,7 @@
       tags: ['landing', 'branding', 'comunidad'],
       url: 'https://conception-v1.vercel.app/',
       img: 'assets/case-conception-v1.jpg',
-      color: 'var(--cyan)'
+      color: 'var(--azul)'
     },
     {
       titulo: 'Tiendas Peon',
@@ -32,7 +32,7 @@
       tags: ['e-commerce', 'catálogo', 'redes'],
       url: 'https://tiendaspeon.vercel.app/',
       img: 'assets/case-tiendas-peon.jpg',
-      color: 'var(--orange)'
+      color: 'var(--naranja)'
     },
     {
       titulo: 'Historias Vivas',
@@ -41,7 +41,7 @@
       tags: ['web', 'cultura', 'contenido'],
       url: 'https://historias-vivas.vercel.app/',
       img: 'assets/case-historias-vivas.jpg',
-      color: 'var(--magenta)'
+      color: 'var(--morado)'
     },
     {
       titulo: 'Galería Campuzano',
@@ -50,7 +50,7 @@
       tags: ['galería', 'js puro', 'archivo'],
       url: 'https://galeria-campuzano.vercel.app/',
       img: 'assets/case-galeria-campuzano.jpg',
-      color: 'var(--green)'
+      color: 'var(--celeste)'
     }
   ];
 

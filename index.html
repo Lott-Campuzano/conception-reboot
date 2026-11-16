@@ -6,8 +6,8 @@
   HTML estático, sin build ni frameworks. El contenido vive aquí;
   el JS solo añade las tarjetas de trabajo (arreglo PROYECTOS),
   reveals, menú móvil, ticker y el formulario.
-  Identidad: estética Nothing / teenage.engineering — tipografía
-  dot-matrix, crema + tinta y cuatro acentos neón funcionales.
+  Lenguaje de diseño: "Minimalismo analógico" — JetBrains Mono,
+  formas redondeadas y la paleta azul/celeste/naranja/morado.
 -->
 <html lang="es">
 <head>
@@ -16,17 +16,16 @@
   <title>Conception — diseño y desarrollo web</title>
   <meta name="description" content="Conception asegura la experiencia de quien interactúa, desde el hardware hasta el software: identidad visual, diseño UI/UX y desarrollo web hecho en México.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f4f2ec" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
   <meta property="og:title" content="Conception">
   <meta property="og:description" content="Ideas que se ven. Código que funciona.">
-  <!-- favicon inline: cuadrícula 2×2 de puntos neón sobre tinta -->
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230b0b0c"/><circle cx="32" cy="32" r="14" fill="%232ed9f6"/><circle cx="68" cy="32" r="14" fill="%23ff6b2c"/><circle cx="32" cy="68" r="14" fill="%23f72e6e"/><circle cx="68" cy="68" r="14" fill="%231fc77e"/></svg>'>
-  <!-- dos voces: Doto (dot-matrix, el display de la marca) y
-       JetBrains Mono para todo lo técnico -->
+  <!-- favicon inline: placa naranja redondeada con capas apiladas -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" rx="22" fill="%23f97316"/><g fill="%23000"><rect x="24" y="30" width="52" height="10" rx="5"/><rect x="24" y="45" width="52" height="10" rx="5"/><rect x="24" y="60" width="52" height="10" rx="5"/></g></svg>'>
+  <!-- una sola voz tipográfica: JetBrains Mono, de fina a extra negrita -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;0,500;0,700;0,800;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
 </head>
@@ -64,10 +63,10 @@
 
   <!-- ══════════ Portada · display dot-matrix sobre un fondo de
        luces y sombras; los datos del estudio en una sola línea ══════════ -->
-  <section class="hero shell" data-accent="cyan">
+  <section class="hero shell" data-accent="azul">
     <div class="hero-bg" aria-hidden="true">
-      <i class="glow glow-cyan"></i>
-      <i class="glow glow-magenta"></i>
+      <i class="glow glow-1"></i>
+      <i class="glow glow-2"></i>
       <i class="beam"></i>
     </div>
     <h1 class="display">
@@ -91,7 +90,7 @@
 
   <!-- ══════════ Trabajo · tarjetas generadas desde el arreglo
        PROYECTOS en app.js: añadir un sitio es añadir un objeto ══════════ -->
-  <section id="trabajo" data-accent="cyan" class="section shell">
+  <section id="trabajo" data-accent="azul" class="section shell">
     <header class="section-head">
       <p class="index">01 <span>/</span> trabajo</p>
       <h2 class="display h2">Casos reales</h2>
@@ -109,7 +108,7 @@
   </section>
 
   <!-- ══════════ Servicios · fichas con tabla de especificaciones ══════════ -->
-  <section id="servicios" data-accent="orange" class="section section-alt">
+  <section id="servicios" data-accent="naranja" class="section section-alt">
     <div class="shell">
       <header class="section-head">
         <p class="index">02 <span>/</span> servicios</p>
@@ -174,7 +173,7 @@
   </section>
 
   <!-- ══════════ Proceso ══════════ -->
-  <section id="proceso" data-accent="magenta" class="section shell">
+  <section id="proceso" data-accent="morado" class="section shell">
     <header class="section-head">
       <p class="index">03 <span>/</span> proceso</p>
       <h2 class="display h2">Cuatro pasos, cero sorpresas</h2>
@@ -208,7 +207,7 @@
   </section>
 
   <!-- ══════════ Comparativa ══════════ -->
-  <section data-accent="green" class="section section-alt">
+  <section data-accent="celeste" class="section section-alt">
     <div class="shell">
       <header class="section-head">
         <p class="index">04 <span>/</span> por qué Conception</p>
@@ -238,7 +237,7 @@
   </section>
 
   <!-- ══════════ Precios ══════════ -->
-  <section id="precios" data-accent="cyan" class="section shell">
+  <section id="precios" data-accent="azul" class="section shell">
     <header class="section-head">
       <p class="index">05 <span>/</span> precios</p>
       <h2 class="display h2">Paquetes con precio cerrado</h2>
@@ -288,7 +287,7 @@
   </section>
 
   <!-- ══════════ Contacto ══════════ -->
-  <section id="contacto" data-accent="orange" class="section section-alt">
+  <section id="contacto" data-accent="naranja" class="section section-alt">
     <div class="shell contact-grid">
       <div class="contact-copy">
         <p class="index">06 <span>/</span> contacto</p>
