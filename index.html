@@ -1,0 +1,504 @@
+<!doctype html>
+<!--
+  CONCEPTION · agencia de diseño gráfico y desarrollo web
+  HTML estático: sin build, sin frameworks. El contenido vive aquí;
+  el JS solo añade reveals, menú móvil, ticker y el formulario.
+  El tema claro/oscuro lo decide el sistema, como en todo el estudio.
+  Inspiración: teenage.engineering (retícula técnica), Nike (display
+  condensado) y frame.work (fichas y tablas de especificaciones).
+-->
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>CONCEPTION · agencia de diseño gráfico y desarrollo web</title>
+  <meta name="description" content="Conception convierte ideas en marcas y productos digitales: identidad visual, diseño UI/UX y desarrollo web hecho en México. Brief gratuito, código 100% tuyo.">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#f4f4f1" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#101112" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="CONCEPTION">
+  <meta property="og:description" content="Ideas que se ven. Código que funciona. Agencia de diseño gráfico y desarrollo web.">
+  <!-- favicon inline: la "C" sobre placa técnica, sin archivo extra -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23101112"/><path d="M74 30a30 30 0 1 0 0 40" stroke="%23ff4400" stroke-width="14" fill="none"/></svg>'>
+  <!-- dos fuentes: Archivo variable (eje de anchura → display condensado
+       estilo Nike) y JetBrains Mono para lo técnico (etiquetas, specs) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="app.js"></script>
+</head>
+<body>
+<a class="skip" href="#trabajo">Saltar al contenido</a>
+
+<!-- ══════════ Topbar · fija: marca, navegación y CTA ══════════ -->
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="#top" aria-label="Conception, inicio">
+      <span class="brand-mark" aria-hidden="true"></span>CONCEPTION
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#trabajo">Trabajo</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <div class="topbar-actions">
+      <a class="btn solid small" href="#contacto">Brief gratuito</a>
+      <button class="menu-btn" aria-expanded="false" aria-controls="panel-movil" aria-label="Abrir menú">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <!-- panel de navegación en móvil -->
+  <nav id="panel-movil" class="mobile-nav" hidden aria-label="Secciones (móvil)">
+    <a href="#trabajo">Trabajo</a>
+    <a href="#servicios">Servicios</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#precios">Precios</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+</header>
+
+<main id="top">
+
+  <!-- ══════════ Portada · display condensado estilo Nike +
+       etiquetas técnicas estilo TE ══════════ -->
+  <section class="hero shell">
+    <p class="kicker"><span class="led" aria-hidden="true"></span>agencia de diseño gráfico &amp; desarrollo web</p>
+    <h1 class="display">
+      Ideas que <em>se&nbsp;ven</em>.<br>
+      Código que funciona.
+    </h1>
+    <p class="lead">
+      Conception es un estudio mexicano que convierte negocios en marcas
+      y productos digitales: identidad visual, interfaz y sitio web,
+      entregados como una sola pieza.
+    </p>
+    <div class="hero-actions">
+      <a class="btn solid" href="#contacto">Empezar un proyecto</a>
+      <a class="btn ghost" href="#trabajo">Ver el trabajo ↘</a>
+    </div>
+    <!-- ficha técnica de la portada: datos en mono, estilo TE -->
+    <dl class="hero-specs" aria-label="Datos del estudio">
+      <div><dt>base</dt><dd>CDMX · remoto</dd></div>
+      <div><dt>proyectos</dt><dd>120+ entregados</dd></div>
+      <div><dt>respuesta</dt><dd>&lt; 24 h</dd></div>
+      <div><dt>stack</dt><dd>HTML · CSS · JS</dd></div>
+    </dl>
+  </section>
+
+  <!-- ══════════ Cinta · marquee estilo Nike con los servicios ══════════ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-track">
+      <span>identidad visual</span><i></i><span>diseño ui/ux</span><i></i><span>desarrollo web</span><i></i><span>branding</span><i></i><span>e-commerce</span><i></i><span>packaging</span><i></i><span>seo</span><i></i><span>motion</span><i></i>
+      <!-- la pista se duplica en JS para el bucle continuo -->
+    </div>
+  </div>
+
+  <!-- ══════════ Trabajo · retícula plana de casos, estilo TE ══════════ -->
+  <section id="trabajo" class="section shell">
+    <header class="section-head">
+      <p class="index">01 <span>/</span> trabajo</p>
+      <h2 class="display h2">Casos recientes</h2>
+      <p class="section-note">Cada proyecto se entrega con archivos fuente, manual y medición. Sin cajas negras.</p>
+    </header>
+
+    <div class="work-grid">
+      <!-- cada tarjeta: viñeta SVG plana (sin fotos externas) + ficha -->
+      <article class="case reveal">
+        <div class="case-art art-1" role="img" aria-label="Identidad de Kiosko Oaxaca: composición plana naranja con lámina y sol">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#ff4400"/>
+            <circle cx="120" cy="110" r="64" fill="#101112"/>
+            <rect x="230" y="70" width="130" height="170" fill="#f4f4f1"/>
+            <rect x="230" y="70" width="130" height="24" fill="#101112"/>
+            <rect x="248" y="118" width="94" height="8" fill="#101112"/>
+            <rect x="248" y="138" width="70" height="8" fill="#101112"/>
+            <rect x="248" y="158" width="94" height="8" fill="#101112"/>
+          </svg>
+        </div>
+        <div class="case-meta">
+          <p class="mono-label">caso 01 · branding + web</p>
+          <h3>Kiosko Oaxaca</h3>
+          <p class="case-desc">Identidad y sitio con menú digital para un restaurante de cocina oaxaqueña.</p>
+          <p class="case-tags"><span>identidad</span><span>web</span><span>menú digital</span></p>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-art art-2" role="img" aria-label="Landing de Nébula Labs: retícula de puntos azul eléctrico">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#101112"/>
+            <g fill="#2f6bff">
+              <circle cx="60" cy="60" r="5"/><circle cx="130" cy="60" r="5"/><circle cx="200" cy="60" r="5"/><circle cx="270" cy="60" r="5"/><circle cx="340" cy="60" r="5"/>
+              <circle cx="60" cy="130" r="5"/><circle cx="200" cy="130" r="5"/><circle cx="340" cy="130" r="5"/>
+              <circle cx="60" cy="200" r="5"/><circle cx="130" cy="200" r="5"/><circle cx="270" cy="200" r="5"/><circle cx="340" cy="200" r="5"/>
+              <circle cx="130" cy="270" r="5"/><circle cx="200" cy="270" r="5"/>
+            </g>
+            <rect x="150" y="100" width="100" height="100" fill="#2f6bff"/>
+            <path d="M150 200 L250 100" stroke="#f4f4f1" stroke-width="8"/>
+          </svg>
+        </div>
+        <div class="case-meta">
+          <p class="mono-label">caso 02 · producto digital</p>
+          <h3>Nébula Labs</h3>
+          <p class="case-desc">Landing y kit de UI para una startup de analítica: de cero a demo en 6 semanas.</p>
+          <p class="case-tags"><span>ui/ux</span><span>landing</span><span>design system</span></p>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-art art-3" role="img" aria-label="Tienda de La Balanza: composición verde con etiquetas colgadas">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#00d26a"/>
+            <line x1="80" y1="0" x2="80" y2="90" stroke="#101112" stroke-width="6"/>
+            <line x1="200" y1="0" x2="200" y2="130" stroke="#101112" stroke-width="6"/>
+            <line x1="320" y1="0" x2="320" y2="70" stroke="#101112" stroke-width="6"/>
+            <rect x="40" y="90" width="80" height="110" fill="#f4f4f1"/>
+            <rect x="160" y="130" width="80" height="130" fill="#101112"/>
+            <rect x="280" y="70" width="80" height="90" fill="#f4f4f1"/>
+            <circle cx="80" cy="145" r="18" fill="#00d26a"/>
+            <rect x="180" y="165" width="40" height="8" fill="#00d26a"/>
+            <rect x="300" y="100" width="40" height="8" fill="#101112"/>
+          </svg>
+        </div>
+        <div class="case-meta">
+          <p class="mono-label">caso 03 · e-commerce</p>
+          <h3>La Balanza</h3>
+          <p class="case-desc">Tienda en línea de moda independiente con pasarela de pago y envíos.</p>
+          <p class="case-tags"><span>e-commerce</span><span>pagos</span><span>packaging</span></p>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-art art-4" role="img" aria-label="Portafolio de Estudio Huerta: encuadres en blanco y negro">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#f4f4f1"/>
+            <rect x="30" y="40" width="200" height="140" fill="#101112"/>
+            <rect x="46" y="56" width="168" height="108" fill="#6b6f73"/>
+            <circle cx="130" cy="110" r="30" fill="#f4f4f1"/>
+            <rect x="250" y="90" width="120" height="170" fill="#101112"/>
+            <rect x="262" y="102" width="96" height="146" fill="#6b6f73"/>
+            <rect x="30" y="200" width="200" height="6" fill="#101112"/>
+            <rect x="30" y="216" width="140" height="6" fill="#101112"/>
+          </svg>
+        </div>
+        <div class="case-meta">
+          <p class="mono-label">caso 04 · portafolio</p>
+          <h3>Estudio Huerta</h3>
+          <p class="case-desc">Portafolio fotográfico con galería a pantalla completa y carga ultrarrápida.</p>
+          <p class="case-tags"><span>web</span><span>galería</span><span>performance</span></p>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-art art-5" role="img" aria-label="Interfaz de Ruta 33: mapa estilizado con trayecto azul">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#101112"/>
+            <path d="M0 220 C 120 180 160 240 260 190 S 380 120 400 130" stroke="#2b2e30" stroke-width="26" fill="none"/>
+            <path d="M0 220 C 120 180 160 240 260 190 S 380 120 400 130" stroke="#ff4400" stroke-width="8" fill="none"/>
+            <circle cx="40" cy="214" r="14" fill="#f4f4f1"/>
+            <circle cx="360" cy="132" r="14" fill="#ff4400"/>
+            <rect x="250" y="40" width="130" height="60" fill="#f4f4f1"/>
+            <rect x="262" y="54" width="80" height="10" fill="#101112"/>
+            <rect x="262" y="74" width="54" height="10" fill="#101112"/>
+          </svg>
+        </div>
+        <div class="case-meta">
+          <p class="mono-label">caso 05 · app móvil</p>
+          <h3>Ruta 33</h3>
+          <p class="case-desc">Diseño de interfaz para una app de movilidad urbana: 40 pantallas y prototipo navegable.</p>
+          <p class="case-tags"><span>ui</span><span>prototipo</span><span>tokens</span></p>
+        </div>
+      </article>
+
+      <article class="case reveal">
+        <div class="case-art art-6" role="img" aria-label="Packaging de Café Meridiano: bolsas planas en tres tonos">
+          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+            <rect width="400" height="300" fill="#e7e5df"/>
+            <rect x="60" y="80" width="90" height="170" fill="#101112"/>
+            <rect x="75" y="100" width="60" height="10" fill="#e7e5df"/>
+            <rect x="160" y="60" width="90" height="190" fill="#ff4400"/>
+            <rect x="175" y="84" width="60" height="10" fill="#101112"/>
+            <circle cx="205" cy="180" r="26" fill="#101112"/>
+            <rect x="260" y="90" width="90" height="160" fill="#f4f4f1"/>
+            <rect x="273" y="110" width="64" height="10" fill="#101112"/>
+          </svg>
+        </div>
+        <div class="case-meta">
+          <p class="mono-label">caso 06 · packaging + web</p>
+          <h3>Café Meridiano</h3>
+          <p class="case-desc">Sistema de empaque por origen y micrositio de suscripción para una tostaduría.</p>
+          <p class="case-tags"><span>packaging</span><span>web</span><span>ilustración</span></p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══════════ Servicios · fichas con tabla de specs, estilo frame.work ══════════ -->
+  <section id="servicios" class="section section-alt">
+    <div class="shell">
+      <header class="section-head">
+        <p class="index">02 <span>/</span> servicios</p>
+        <h2 class="display h2">Lo que construimos</h2>
+        <p class="section-note">Servicios definidos como especificaciones: sabes qué incluye, qué recibe y desde cuándo.</p>
+      </header>
+
+      <div class="srv-grid">
+        <article class="srv reveal">
+          <header class="srv-head"><span class="mono-label">srv-01</span><h3>Identidad &amp; branding</h3></header>
+          <p>La cara de tu negocio: nombre visual, logotipo y un sistema que se sostiene en cualquier tamaño.</p>
+          <table class="spec">
+            <tbody>
+              <tr><th>incluye</th><td>logo, paleta, tipografía, manual PDF</td></tr>
+              <tr><th>entrega</th><td>3 – 4 semanas</td></tr>
+              <tr><th>recibes</th><td>archivos fuente + exportados</td></tr>
+              <tr><th>desde</th><td class="price">$8,500 MXN</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="srv reveal">
+          <header class="srv-head"><span class="mono-label">srv-02</span><h3>Diseño web &amp; UI/UX</h3></header>
+          <p>Interfaces pensadas desde el uso real: investigación, wireframes y un prototipo que se puede probar.</p>
+          <table class="spec">
+            <tbody>
+              <tr><th>incluye</th><td>research, wireframes, UI kit, prototipo</td></tr>
+              <tr><th>entrega</th><td>3 – 5 semanas</td></tr>
+              <tr><th>recibes</th><td>Figma + tokens de diseño</td></tr>
+              <tr><th>desde</th><td class="price">$12,000 MXN</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="srv reveal">
+          <header class="srv-head"><span class="mono-label">srv-03</span><h3>Desarrollo web</h3></header>
+          <p>Sitios rápidos y medibles, de landing a sitio completo: HTML/CSS/JS puro o con el stack que tu equipo ya usa.</p>
+          <table class="spec">
+            <tbody>
+              <tr><th>incluye</th><td>maquetación, responsive, SEO base</td></tr>
+              <tr><th>entrega</th><td>2 – 6 semanas</td></tr>
+              <tr><th>recibes</th><td>código en tu propio repositorio</td></tr>
+              <tr><th>desde</th><td class="price">$15,000 MXN</td></tr>
+            </tbody>
+          </table>
+        </article>
+
+        <article class="srv reveal">
+          <header class="srv-head"><span class="mono-label">srv-04</span><h3>E-commerce &amp; medición</h3></header>
+          <p>Tiendas que venden y datos que deciden: catálogo, pagos y tableros para saber qué funciona.</p>
+          <table class="spec">
+            <tbody>
+              <tr><th>incluye</th><td>catálogo, pagos, envíos, analítica</td></tr>
+              <tr><th>entrega</th><td>4 – 8 semanas</td></tr>
+              <tr><th>recibes</th><td>tienda + tablero de métricas</td></tr>
+              <tr><th>desde</th><td class="price">$18,000 MXN</td></tr>
+            </tbody>
+          </table>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ Proceso · panel de pasos, estilo TE ══════════ -->
+  <section id="proceso" class="section shell">
+    <header class="section-head">
+      <p class="index">03 <span>/</span> proceso</p>
+      <h2 class="display h2">Cuatro pasos, cero sorpresas</h2>
+    </header>
+    <ol class="steps">
+      <li class="step reveal">
+        <span class="step-num">01</span>
+        <h3>Brief</h3>
+        <p>Plática gratuita de 30 min. Salimos con objetivos, alcance y presupuesto cerrado por escrito.</p>
+        <p class="mono-label">día 0 · sin costo</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">02</span>
+        <h3>Concepto</h3>
+        <p>Dirección visual y arquitectura del sitio. Apruebas el concepto antes de producir nada.</p>
+        <p class="mono-label">semana 1</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">03</span>
+        <h3>Producción</h3>
+        <p>Diseño y código en paralelo, con avances semanales en un enlace que siempre puedes revisar.</p>
+        <p class="mono-label">semanas 2 – 5</p>
+      </li>
+      <li class="step reveal">
+        <span class="step-num">04</span>
+        <h3>Entrega</h3>
+        <p>Publicación, manual de marca, capacitación y 3 meses de soporte incluido.</p>
+        <p class="mono-label">día final · + soporte</p>
+      </li>
+    </ol>
+  </section>
+
+  <!-- ══════════ Comparativa · matriz transparente, estilo frame.work ══════════ -->
+  <section class="section section-alt">
+    <div class="shell">
+      <header class="section-head">
+        <p class="index">04 <span>/</span> por qué conception</p>
+        <h2 class="display h2">Compara y decide</h2>
+      </header>
+      <div class="table-wrap">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col">criterio</th>
+              <th scope="col" class="col-us">conception</th>
+              <th scope="col">agencia tradicional</th>
+              <th scope="col">freelance suelto</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">primera asesoría</th><td class="col-us">gratis, 30 min</td><td> cotización pagada</td><td>gratis</td></tr>
+            <tr><th scope="row">diseño y código</th><td class="col-us">mismo equipo</td><td>separados por áreas</td><td>solo una parte</td></tr>
+            <tr><th scope="row">archivos fuente</th><td class="col-us">siempre se entregan</td><td>rara vez</td><td>depende</td></tr>
+            <tr><th scope="row">código y repositorio</th><td class="col-us">100% tuyo</td><td>licencia cerrada</td><td>riesgo de abandono</td></tr>
+            <tr><th scope="row">precio</th><td class="col-us">cerrado por escrito</td><td>contratos anuales</td><td>imprevisible</td></tr>
+            <tr><th scope="row">soporte post-entrega</th><td class="col-us">3 meses incluidos</td><td>costo extra</td><td>no incluye</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ Precios · tres planes planos ══════════ -->
+  <section id="precios" class="section shell">
+    <header class="section-head">
+      <p class="index">05 <span>/</span> precios</p>
+      <h2 class="display h2">Paquetes con precio cerrado</h2>
+      <p class="section-note">Todo incluye brief, concepto, producción, entrega y soporte. IVA no incluido.</p>
+    </header>
+
+    <div class="plan-grid">
+      <article class="plan reveal">
+        <p class="mono-label">plan a</p>
+        <h3>Landing</h3>
+        <p class="plan-price">$9,900<span> MXN</span></p>
+        <ul class="plan-list">
+          <li>1 página de aterrizaje</li>
+          <li>Copywriting básico</li>
+          <li>Responsive + SEO base</li>
+          <li>Entrega en 2 semanas</li>
+        </ul>
+        <a class="btn ghost block" href="#contacto">Cotizar landing</a>
+      </article>
+
+      <article class="plan plan-popular reveal">
+        <p class="mono-label">plan b · más elegido</p>
+        <h3>Sitio completo</h3>
+        <p class="plan-price">$19,900<span> MXN</span></p>
+        <ul class="plan-list">
+          <li>Hasta 6 secciones</li>
+          <li>Blog o catálogo</li>
+          <li>Analítica + formularios</li>
+          <li>Entrega en 4 semanas</li>
+        </ul>
+        <a class="btn solid block" href="#contacto">Cotizar sitio</a>
+      </article>
+
+      <article class="plan reveal">
+        <p class="mono-label">plan c</p>
+        <h3>Marca + web</h3>
+        <p class="plan-price">$29,900<span> MXN</span></p>
+        <ul class="plan-list">
+          <li>Identidad visual completa</li>
+          <li>Manual de marca</li>
+          <li>Sitio completo con la marca</li>
+          <li>Entrega en 6 semanas</li>
+        </ul>
+        <a class="btn ghost block" href="#contacto">Cotizar marca + web</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ══════════ Contacto · formulario plano ══════════ -->
+  <section id="contacto" class="section section-alt">
+    <div class="shell contact-grid">
+      <div class="contact-copy">
+        <p class="index">06 <span>/</span> contacto</p>
+        <h2 class="display h2">Empieza tu proyecto</h2>
+        <p class="lead">
+          Cuéntanos qué necesitas. Respondemos en menos de 24 horas
+          con la agenda para tu brief gratuito.
+        </p>
+        <dl class="hero-specs contact-specs">
+          <div><dt>correo</dt><dd><a href="mailto:hola@conception.mx">hola@conception.mx</a></dd></div>
+          <div><dt>teléfono</dt><dd><a href="tel:+525500000000">+52 55 0000 0000</a></dd></div>
+          <div><dt>horario</dt><dd>lun – vie · 10:00 – 18:00</dd></div>
+        </dl>
+      </div>
+
+      <form class="contact-form" novalidate>
+        <div class="field">
+          <label for="f-nombre">nombre</label>
+          <input id="f-nombre" name="nombre" type="text" required autocomplete="name" placeholder="Tu nombre">
+        </div>
+        <div class="field">
+          <label for="f-email">correo</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="tu@correo.com">
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="f-tipo">tipo de proyecto</label>
+            <select id="f-tipo" name="tipo" required>
+              <option value="" selected disabled>Elige uno…</option>
+              <option>Identidad / branding</option>
+              <option>Diseño web / UI</option>
+              <option>Desarrollo web</option>
+              <option>E-commerce</option>
+              <option>Otro</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="f-precio">presupuesto</label>
+            <select id="f-precio" name="presupuesto">
+              <option value="" selected disabled>Rango…</option>
+              <option>Menos de $10,000</option>
+              <option>$10,000 – $20,000</option>
+              <option>$20,000 – $40,000</option>
+              <option>Más de $40,000</option>
+            </select>
+          </div>
+        </div>
+        <div class="field">
+          <label for="f-msg">mensaje</label>
+          <textarea id="f-msg" name="mensaje" rows="4" required placeholder="Cuéntanos de tu negocio y qué necesitas…"></textarea>
+        </div>
+        <button class="btn solid block" type="submit">Enviar brief</button>
+        <p class="form-status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════ Pie · técnico, mono, con coordenadas ══════════ -->
+<footer class="footer">
+  <div class="shell footer-grid">
+    <div class="footer-brand">
+      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>CONCEPTION</a>
+      <p class="mono-label">19.4326° N, 99.1332° W · CDMX</p>
+      <p class="footer-note">Agencia de diseño gráfico y desarrollo web. Hecho en México.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Secciones del sitio">
+      <a href="#trabajo">Trabajo</a>
+      <a href="#servicios">Servicios</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#precios">Precios</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <nav class="footer-nav" aria-label="Redes y perfiles">
+      <a href="https://www.behance.net/lottocampuzano" target="_blank" rel="noopener">Behance ↗</a>
+      <a href="https://www.linkedin.com/in/lott-campuzano/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a href="https://github.com/Lott-Campuzano" target="_blank" rel="noopener">GitHub ↗</a>
+    </nav>
+    <p class="footer-copy mono-label">© <span id="anio">2026</span> conception · cc0</p>
+  </div>
+</footer>
+
+</body>
+</html>
