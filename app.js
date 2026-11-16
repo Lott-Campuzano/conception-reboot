@@ -1,16 +1,93 @@
 /* ═══════════════════════════════════════════════════════
-   CONCEPTION · script
-   Solo mejoras: nada esencial depende de aquí. El sitio es
-   legible y navegable sin JavaScript.
+   Conception · script
+   Solo mejoras: nada esencial depende de aquí. Sin JS el
+   sitio muestra la lista de proyectos en el <noscript>.
+   - PROYECTOS: el arreglo que genera todas las tarjetas de
+     trabajo. Añadir un sitio = añadir un objeto aquí.
    - cinta: duplica la pista para el bucle continuo
-   - reveals al hacer scroll (IntersectionObserver)
+   - reveals al hacer scroll
    - subrayado de la sección activa en la navegación
-   - menú móvil
-   - formulario: validación y confirmación local
-   - año del pie
+   - menú móvil · formulario local · año del pie
    ═══════════════════════════════════════════════════════ */
 (() => {
   'use strict';
+
+  /* ── los proyectos ──────────────────────────────────────
+     img: captura en assets/ · si falta o falla, la tarjeta
+     muestra un azulejo con la inicial (ver fallback abajo) */
+  const PROYECTOS = [
+    {
+      titulo: 'Conception v1',
+      tipo: 'identidad + landing',
+      desc: 'La primera versión del estudio: comunidad, productos y equipo.',
+      tags: ['landing', 'branding', 'comunidad'],
+      url: 'https://conception-v1.vercel.app/',
+      img: 'assets/case-conception-v1.jpg',
+      color: 'var(--cyan)'
+    },
+    {
+      titulo: 'Tiendas Peon',
+      tipo: 'e-commerce',
+      desc: 'Tienda de material escolar: catálogo, novedades y reseñas.',
+      tags: ['e-commerce', 'catálogo', 'redes'],
+      url: 'https://tiendaspeon.vercel.app/',
+      img: 'assets/case-tiendas-peon.jpg',
+      color: 'var(--orange)'
+    },
+    {
+      titulo: 'Historias Vivas',
+      tipo: 'sitio cultural',
+      desc: 'Teatro independiente en Tenancingo: temporada, repertorio y boletos.',
+      tags: ['web', 'cultura', 'contenido'],
+      url: 'https://historias-vivas.vercel.app/',
+      img: 'assets/case-historias-vivas.jpg',
+      color: 'var(--magenta)'
+    },
+    {
+      titulo: 'Galería Campuzano',
+      tipo: 'galería digital',
+      desc: 'Archivo de 30 obras con selección que cambia en cada visita.',
+      tags: ['galería', 'js puro', 'archivo'],
+      url: 'https://galeria-campuzano.vercel.app/',
+      img: 'assets/case-galeria-campuzano.jpg',
+      color: 'var(--green)'
+    }
+  ];
+
+  /* ── plantilla de tarjeta: una sola pieza para todos los casos ── */
+  const tarjeta = (p, i) => {
+    const n = String(i + 1).padStart(2, '0');
+    return `
+      <article class="case reveal">
+        <a class="case-art" href="${p.url}" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <img src="${p.img}" alt="" loading="lazy" width="800" height="600" data-color="${p.color}" data-letra="${p.titulo[0]}">
+        </a>
+        <div class="case-meta">
+          <p class="mono-label">caso ${n} · ${p.tipo}</p>
+          <h3>${p.titulo}</h3>
+          <p class="case-desc">${p.desc}</p>
+          <p class="case-tags">${p.tags.map((t) => `<span>${t}</span>`).join('')}</p>
+          <a class="case-link mono-label" href="${p.url}" target="_blank" rel="noopener">ver sitio ↗</a>
+        </div>
+      </article>`;
+  };
+
+  /* si la captura no carga, azulejo del color del proyecto con la inicial */
+  const alFallar = (img) => {
+    const azulejo = document.createElement('span');
+    azulejo.className = 'case-fallback';
+    azulejo.style.background = img.dataset.color;
+    azulejo.textContent = img.dataset.letra;
+    img.replaceWith(azulejo);
+  };
+
+  const grid = document.querySelector('.work-grid');
+  if (grid) {
+    grid.innerHTML = PROYECTOS.map(tarjeta).join('');
+    grid.querySelectorAll('img').forEach((img) => {
+      img.addEventListener('error', () => alFallar(img), { once: true });
+    });
+  }
 
   /* ── cinta: la pista se duplica para que el marquee nunca se acabe ── */
   const track = document.querySelector('.ticker-track');
@@ -72,13 +149,10 @@
       if (!form.checkValidity()) {
         form.reportValidity();
         estado.textContent = 'Revisa los campos marcados.';
-        estado.classList.remove('ok');
         return;
       }
-      // demo local: confirma y limpia. Aquí iría el POST real.
-      form.reset();
-      estado.textContent = '✔ Recibido. Te respondemos en menos de 24 h.';
-      estado.classList.add('ok');
+      form.reset(); // demo local: aquí iría el POST real
+      estado.textContent = 'Recibido. Te respondemos en menos de 24 h.';
     });
   }
 

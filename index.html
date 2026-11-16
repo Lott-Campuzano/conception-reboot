@@ -1,42 +1,42 @@
 <!doctype html>
 <!--
-  CONCEPTION · agencia de diseño gráfico y desarrollo web
-  HTML estático: sin build, sin frameworks. El contenido vive aquí;
-  el JS solo añade reveals, menú móvil, ticker y el formulario.
-  El tema claro/oscuro lo decide el sistema, como en todo el estudio.
-  Inspiración: teenage.engineering (retícula técnica), Nike (display
-  condensado) y frame.work (fichas y tablas de especificaciones).
+  Conception · diseño gráfico y desarrollo web
+  Filosofía: aseguramos la experiencia de quien interactúa
+  desde el hardware hasta el software.
+  HTML estático, sin build ni frameworks. El contenido vive aquí;
+  el JS solo añade las tarjetas de trabajo (arreglo PROYECTOS),
+  reveals, menú móvil, ticker y el formulario.
+  Identidad: estética Nothing / teenage.engineering — tipografía
+  dot-matrix, crema + tinta y cuatro acentos neón funcionales.
 -->
 <html lang="es">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>CONCEPTION · agencia de diseño gráfico y desarrollo web</title>
-  <meta name="description" content="Conception convierte ideas en marcas y productos digitales: identidad visual, diseño UI/UX y desarrollo web hecho en México. Brief gratuito, código 100% tuyo.">
+  <title>Conception — diseño y desarrollo web</title>
+  <meta name="description" content="Conception asegura la experiencia de quien interactúa, desde el hardware hasta el software: identidad visual, diseño UI/UX y desarrollo web hecho en México.">
   <meta name="color-scheme" content="light dark">
-  <meta name="theme-color" content="#f4f4f1" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#101112" media="(prefers-color-scheme: dark)">
-  <meta property="og:title" content="CONCEPTION">
-  <meta property="og:description" content="Ideas que se ven. Código que funciona. Agencia de diseño gráfico y desarrollo web.">
-  <!-- favicon inline: la "C" sobre placa técnica, sin archivo extra -->
-  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%23101112"/><path d="M74 30a30 30 0 1 0 0 40" stroke="%23ff4400" stroke-width="14" fill="none"/></svg>'>
-  <!-- dos fuentes: Archivo variable (eje de anchura → display condensado
-       estilo Nike) y JetBrains Mono para lo técnico (etiquetas, specs) -->
+  <meta name="theme-color" content="#f4f2ec" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme: dark)">
+  <meta property="og:title" content="Conception">
+  <meta property="og:description" content="Ideas que se ven. Código que funciona.">
+  <!-- favicon inline: cuadrícula 2×2 de puntos neón sobre tinta -->
+  <link rel="icon" href='data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230b0b0c"/><circle cx="32" cy="32" r="14" fill="%232ed9f6"/><circle cx="68" cy="32" r="14" fill="%23ff6b2c"/><circle cx="32" cy="68" r="14" fill="%23f72e6e"/><circle cx="68" cy="68" r="14" fill="%231fc77e"/></svg>'>
+  <!-- dos voces: Doto (dot-matrix, el display de la marca) y
+       JetBrains Mono para todo lo técnico -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Doto:wght@400..900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script defer src="app.js"></script>
 </head>
 <body>
 <a class="skip" href="#trabajo">Saltar al contenido</a>
 
-<!-- ══════════ Topbar · fija: marca, navegación y CTA ══════════ -->
+<!-- ══════════ Topbar ══════════ -->
 <header class="topbar">
   <div class="shell topbar-inner">
-    <a class="brand" href="#top" aria-label="Conception, inicio">
-      <span class="brand-mark" aria-hidden="true"></span>CONCEPTION
-    </a>
+    <a class="brand" href="#top">Conception</a>
     <nav class="nav" aria-label="Secciones">
       <a href="#trabajo">Trabajo</a>
       <a href="#servicios">Servicios</a>
@@ -51,7 +51,6 @@
       </button>
     </div>
   </div>
-  <!-- panel de navegación en móvil -->
   <nav id="panel-movil" class="mobile-nav" hidden aria-label="Secciones (móvil)">
     <a href="#trabajo">Trabajo</a>
     <a href="#servicios">Servicios</a>
@@ -63,179 +62,70 @@
 
 <main id="top">
 
-  <!-- ══════════ Portada · display condensado estilo Nike +
-       etiquetas técnicas estilo TE ══════════ -->
-  <section class="hero shell">
-    <p class="kicker"><span class="led" aria-hidden="true"></span>agencia de diseño gráfico &amp; desarrollo web</p>
+  <!-- ══════════ Portada · display dot-matrix sobre un fondo de
+       luces y sombras; los datos del estudio en una sola línea ══════════ -->
+  <section class="hero shell" data-accent="cyan">
+    <div class="hero-bg" aria-hidden="true">
+      <i class="glow glow-cyan"></i>
+      <i class="glow glow-magenta"></i>
+      <i class="beam"></i>
+    </div>
     <h1 class="display">
       Ideas que <em>se&nbsp;ven</em>.<br>
       Código que funciona.
     </h1>
-    <p class="lead">
-      Conception es un estudio mexicano que convierte negocios en marcas
-      y productos digitales: identidad visual, interfaz y sitio web,
-      entregados como una sola pieza.
-    </p>
-    <div class="hero-actions">
-      <a class="btn solid" href="#contacto">Empezar un proyecto</a>
-      <a class="btn ghost" href="#trabajo">Ver el trabajo ↘</a>
-    </div>
-    <!-- ficha técnica de la portada: datos en mono, estilo TE -->
     <dl class="hero-specs" aria-label="Datos del estudio">
       <div><dt>base</dt><dd>CDMX · remoto</dd></div>
-      <div><dt>proyectos</dt><dd>120+ entregados</dd></div>
+      <div><dt>proyectos</dt><dd>120+</dd></div>
       <div><dt>respuesta</dt><dd>&lt; 24 h</dd></div>
       <div><dt>stack</dt><dd>HTML · CSS · JS</dd></div>
     </dl>
   </section>
 
-  <!-- ══════════ Cinta · marquee estilo Nike con los servicios ══════════ -->
+  <!-- ══════════ Cinta · los servicios en bucle continuo ══════════ -->
   <div class="ticker" aria-hidden="true">
     <div class="ticker-track">
-      <span>identidad visual</span><i></i><span>diseño ui/ux</span><i></i><span>desarrollo web</span><i></i><span>branding</span><i></i><span>e-commerce</span><i></i><span>packaging</span><i></i><span>seo</span><i></i><span>motion</span><i></i>
-      <!-- la pista se duplica en JS para el bucle continuo -->
+      <span>Identidad visual</span><i></i><span>Diseño UI/UX</span><i></i><span>Desarrollo web</span><i></i><span>Branding</span><i></i><span>E-commerce</span><i></i><span>Packaging</span><i></i><span>SEO</span><i></i><span>Motion</span><i></i>
     </div>
   </div>
 
-  <!-- ══════════ Trabajo · retícula plana de casos, estilo TE ══════════ -->
-  <section id="trabajo" class="section shell">
+  <!-- ══════════ Trabajo · tarjetas generadas desde el arreglo
+       PROYECTOS en app.js: añadir un sitio es añadir un objeto ══════════ -->
+  <section id="trabajo" data-accent="cyan" class="section shell">
     <header class="section-head">
       <p class="index">01 <span>/</span> trabajo</p>
       <h2 class="display h2">Casos reales</h2>
-      <p class="section-note">Proyectos en producción, visitables ahora mismo. Cada entrega incluye archivos fuente, manual y medición.</p>
+      <p class="section-note">En producción, visitables ahora mismo.</p>
     </header>
-
-    <div class="work-grid">
-      <!-- cada tarjeta: viñeta SVG plana (sin fotos externas) + ficha.
-           Todos los casos son proyectos reales en producción. -->
-      <article class="case reveal">
-        <div class="case-art art-1" role="img" aria-label="Conception v1: tres fichas de producto sobre fondo tinta">
-          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect width="400" height="300" fill="#101112"/>
-            <rect x="36" y="80" width="92" height="130" fill="#2b2e30"/>
-            <rect x="36" y="80" width="92" height="20" fill="#ff4400"/>
-            <rect x="154" y="80" width="92" height="130" fill="#2b2e30"/>
-            <rect x="154" y="80" width="92" height="20" fill="#2f6bff"/>
-            <rect x="272" y="80" width="92" height="130" fill="#2b2e30"/>
-            <rect x="272" y="80" width="92" height="20" fill="#00d26a"/>
-            <rect x="52" y="120" width="60" height="8" fill="#9b9ea2"/>
-            <rect x="52" y="140" width="44" height="8" fill="#9b9ea2"/>
-            <rect x="170" y="120" width="60" height="8" fill="#9b9ea2"/>
-            <rect x="170" y="140" width="44" height="8" fill="#9b9ea2"/>
-            <rect x="288" y="120" width="60" height="8" fill="#9b9ea2"/>
-            <rect x="288" y="140" width="44" height="8" fill="#9b9ea2"/>
-            <rect x="36" y="240" width="328" height="2" fill="#2b2e30"/>
-          </svg>
-        </div>
-        <div class="case-meta">
-          <p class="mono-label">caso 01 · identidad + landing</p>
-          <h3>Conception v1</h3>
-          <p class="case-desc">La primera encarnación del estudio: landing de la comunidad con productos y perfiles del equipo.</p>
-          <p class="case-tags"><span>landing</span><span>branding</span><span>comunidad</span></p>
-          <a class="case-link mono-label" href="https://conception-v1.vercel.app/" target="_blank" rel="noopener">ver sitio ↗</a>
-        </div>
-      </article>
-
-      <article class="case reveal">
-        <div class="case-art art-2" role="img" aria-label="Tiendas Peon: fachada de tienda con toldo a rayas naranjas">
-          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect width="400" height="300" fill="#f4f4f1"/>
-            <rect x="60" y="60" width="280" height="180" fill="#fbfbf9"/>
-            <g>
-              <rect x="60" y="40" width="40" height="26" fill="#ff4400"/>
-              <rect x="100" y="40" width="40" height="26" fill="#131416"/>
-              <rect x="140" y="40" width="40" height="26" fill="#ff4400"/>
-              <rect x="180" y="40" width="40" height="26" fill="#131416"/>
-              <rect x="220" y="40" width="40" height="26" fill="#ff4400"/>
-              <rect x="260" y="40" width="40" height="26" fill="#131416"/>
-              <rect x="300" y="40" width="40" height="26" fill="#ff4400"/>
-            </g>
-            <rect x="84" y="96" width="112" height="10" fill="#131416"/>
-            <rect x="84" y="116" width="80" height="10" fill="#131416"/>
-            <rect x="84" y="150" width="44" height="60" fill="#ff4400"/>
-            <rect x="140" y="150" width="44" height="60" fill="#2f6bff"/>
-            <rect x="196" y="150" width="44" height="60" fill="#00d26a"/>
-            <rect x="260" y="96" width="60" height="114" fill="#131416"/>
-            <rect x="270" y="150" width="40" height="60" fill="#f4f4f1"/>
-          </svg>
-        </div>
-        <div class="case-meta">
-          <p class="mono-label">caso 02 · e-commerce</p>
-          <h3>Tiendas Peon</h3>
-          <p class="case-desc">Tienda en línea de material escolar y de práctica: catálogo completo, novedades y reseñas vía Facebook.</p>
-          <p class="case-tags"><span>e-commerce</span><span>catálogo</span><span>redes</span></p>
-          <a class="case-link mono-label" href="https://tiendaspeon.vercel.app/" target="_blank" rel="noopener">ver sitio ↗</a>
-        </div>
-      </article>
-
-      <article class="case reveal">
-        <div class="case-art art-3" role="img" aria-label="Historias Vivas: foro teatral con reflector y silueta en escena">
-          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect width="400" height="300" fill="#131416"/>
-            <path d="M200 30 L130 210 L270 210 Z" fill="#ff4400" opacity="0.85"/>
-            <circle cx="200" cy="150" r="26" fill="#131416"/>
-            <rect x="186" y="176" width="28" height="52" fill="#131416"/>
-            <rect x="80" y="210" width="240" height="34" fill="#2b2e30"/>
-            <rect x="80" y="210" width="240" height="6" fill="#ff4400"/>
-            <rect x="120" y="256" width="160" height="8" fill="#2b2e30"/>
-            <rect x="60" y="40" width="8" height="170" fill="#ff4400" opacity="0.35"/>
-            <rect x="332" y="40" width="8" height="170" fill="#ff4400" opacity="0.35"/>
-          </svg>
-        </div>
-        <div class="case-meta">
-          <p class="mono-label">caso 03 · sitio cultural</p>
-          <h3>Historias Vivas</h3>
-          <p class="case-desc">Sitio de una compañía de teatro independiente en Tenancingo: temporada, repertorio y boletos.</p>
-          <p class="case-tags"><span>web</span><span>cultura</span><span>contenido</span></p>
-          <a class="case-link mono-label" href="https://historias-vivas.vercel.app/" target="_blank" rel="noopener">ver sitio ↗</a>
-        </div>
-      </article>
-
-      <article class="case reveal">
-        <div class="case-art art-4" role="img" aria-label="Galería Campuzano: muro blanco con marcos colgados">
-          <svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
-            <rect width="400" height="300" fill="#eceae5"/>
-            <line x1="0" y1="52" x2="400" y2="52" stroke="#d8d8d2" stroke-width="2"/>
-            <rect x="48" y="76" width="100" height="130" fill="#131416"/>
-            <rect x="60" y="88" width="76" height="106" fill="#f4f4f1"/>
-            <circle cx="98" cy="130" r="22" fill="#ff4400"/>
-            <rect x="170" y="96" width="120" height="90" fill="#131416"/>
-            <rect x="182" y="108" width="96" height="66" fill="#2f6bff"/>
-            <rect x="310" y="76" width="60" height="80" fill="#131416"/>
-            <rect x="318" y="84" width="44" height="64" fill="#f4f4f1"/>
-            <rect x="48" y="226" width="90" height="5" fill="#131416"/>
-            <rect x="48" y="240" width="60" height="5" fill="#131416"/>
-          </svg>
-        </div>
-        <div class="case-meta">
-          <p class="mono-label">caso 04 · galería digital</p>
-          <h3>Galería Campuzano</h3>
-          <p class="case-desc">Galería de arte estática: archivo personal con 30 obras, selección que cambia en cada visita y visor a pantalla completa.</p>
-          <p class="case-tags"><span>galería</span><span>js puro</span><span>archivo</span></p>
-          <a class="case-link mono-label" href="https://galeria-campuzano.vercel.app/" target="_blank" rel="noopener">ver sitio ↗</a>
-        </div>
-      </article>
-    </div>
+    <div class="work-grid"></div>
+    <noscript>
+      <ul class="work-fallback mono-label">
+        <li><a href="https://conception-v1.vercel.app/">Conception v1 ↗</a></li>
+        <li><a href="https://tiendaspeon.vercel.app/">Tiendas Peon ↗</a></li>
+        <li><a href="https://historias-vivas.vercel.app/">Historias Vivas ↗</a></li>
+        <li><a href="https://galeria-campuzano.vercel.app/">Galería Campuzano ↗</a></li>
+      </ul>
+    </noscript>
   </section>
 
-  <!-- ══════════ Servicios · fichas con tabla de specs, estilo frame.work ══════════ -->
-  <section id="servicios" class="section section-alt">
+  <!-- ══════════ Servicios · fichas con tabla de especificaciones ══════════ -->
+  <section id="servicios" data-accent="orange" class="section section-alt">
     <div class="shell">
       <header class="section-head">
         <p class="index">02 <span>/</span> servicios</p>
         <h2 class="display h2">Lo que construimos</h2>
-        <p class="section-note">Servicios definidos como especificaciones: sabes qué incluye, qué recibe y desde cuándo.</p>
+        <p class="section-note">Qué incluye, cuánto tarda y desde cuánto.</p>
       </header>
 
       <div class="srv-grid">
         <article class="srv reveal">
           <header class="srv-head"><span class="mono-label">srv-01</span><h3>Identidad &amp; branding</h3></header>
-          <p>La cara de tu negocio: nombre visual, logotipo y un sistema que se sostiene en cualquier tamaño.</p>
+          <p>Logotipo, paleta y manual de marca que se sostiene en cualquier tamaño.</p>
           <table class="spec">
             <tbody>
-              <tr><th>incluye</th><td>logo, paleta, tipografía, manual PDF</td></tr>
+              <tr><th>incluye</th><td>logo, paleta, tipografía, manual</td></tr>
               <tr><th>entrega</th><td>3 – 4 semanas</td></tr>
-              <tr><th>recibes</th><td>archivos fuente + exportados</td></tr>
+              <tr><th>recibes</th><td>archivos fuente</td></tr>
               <tr><th>desde</th><td class="price">$8,500 MXN</td></tr>
             </tbody>
           </table>
@@ -243,12 +133,12 @@
 
         <article class="srv reveal">
           <header class="srv-head"><span class="mono-label">srv-02</span><h3>Diseño web &amp; UI/UX</h3></header>
-          <p>Interfaces pensadas desde el uso real: investigación, wireframes y un prototipo que se puede probar.</p>
+          <p>Research, wireframes y un prototipo que se puede probar.</p>
           <table class="spec">
             <tbody>
               <tr><th>incluye</th><td>research, wireframes, UI kit, prototipo</td></tr>
               <tr><th>entrega</th><td>3 – 5 semanas</td></tr>
-              <tr><th>recibes</th><td>Figma + tokens de diseño</td></tr>
+              <tr><th>recibes</th><td>Figma + tokens</td></tr>
               <tr><th>desde</th><td class="price">$12,000 MXN</td></tr>
             </tbody>
           </table>
@@ -256,12 +146,12 @@
 
         <article class="srv reveal">
           <header class="srv-head"><span class="mono-label">srv-03</span><h3>Desarrollo web</h3></header>
-          <p>Sitios rápidos y medibles, de landing a sitio completo: HTML/CSS/JS puro o con el stack que tu equipo ya usa.</p>
+          <p>Sitios rápidos y medibles, de landing a sitio completo.</p>
           <table class="spec">
             <tbody>
               <tr><th>incluye</th><td>maquetación, responsive, SEO base</td></tr>
               <tr><th>entrega</th><td>2 – 6 semanas</td></tr>
-              <tr><th>recibes</th><td>código en tu propio repositorio</td></tr>
+              <tr><th>recibes</th><td>código en tu repositorio</td></tr>
               <tr><th>desde</th><td class="price">$15,000 MXN</td></tr>
             </tbody>
           </table>
@@ -269,12 +159,12 @@
 
         <article class="srv reveal">
           <header class="srv-head"><span class="mono-label">srv-04</span><h3>E-commerce &amp; medición</h3></header>
-          <p>Tiendas que venden y datos que deciden: catálogo, pagos y tableros para saber qué funciona.</p>
+          <p>Catálogo, pagos y tableros para saber qué funciona.</p>
           <table class="spec">
             <tbody>
               <tr><th>incluye</th><td>catálogo, pagos, envíos, analítica</td></tr>
               <tr><th>entrega</th><td>4 – 8 semanas</td></tr>
-              <tr><th>recibes</th><td>tienda + tablero de métricas</td></tr>
+              <tr><th>recibes</th><td>tienda + métricas</td></tr>
               <tr><th>desde</th><td class="price">$18,000 MXN</td></tr>
             </tbody>
           </table>
@@ -283,8 +173,8 @@
     </div>
   </section>
 
-  <!-- ══════════ Proceso · panel de pasos, estilo TE ══════════ -->
-  <section id="proceso" class="section shell">
+  <!-- ══════════ Proceso ══════════ -->
+  <section id="proceso" data-accent="magenta" class="section shell">
     <header class="section-head">
       <p class="index">03 <span>/</span> proceso</p>
       <h2 class="display h2">Cuatro pasos, cero sorpresas</h2>
@@ -293,35 +183,35 @@
       <li class="step reveal">
         <span class="step-num">01</span>
         <h3>Brief</h3>
-        <p>Plática gratuita de 30 min. Salimos con objetivos, alcance y presupuesto cerrado por escrito.</p>
+        <p>30 min: objetivos, alcance y precio cerrado por escrito.</p>
         <p class="mono-label">día 0 · sin costo</p>
       </li>
       <li class="step reveal">
         <span class="step-num">02</span>
         <h3>Concepto</h3>
-        <p>Dirección visual y arquitectura del sitio. Apruebas el concepto antes de producir nada.</p>
+        <p>Dirección visual y arquitectura. Apruebas antes de producir.</p>
         <p class="mono-label">semana 1</p>
       </li>
       <li class="step reveal">
         <span class="step-num">03</span>
         <h3>Producción</h3>
-        <p>Diseño y código en paralelo, con avances semanales en un enlace que siempre puedes revisar.</p>
+        <p>Diseño y código en paralelo, con avances semanales.</p>
         <p class="mono-label">semanas 2 – 5</p>
       </li>
       <li class="step reveal">
         <span class="step-num">04</span>
         <h3>Entrega</h3>
-        <p>Publicación, manual de marca, capacitación y 3 meses de soporte incluido.</p>
-        <p class="mono-label">día final · + soporte</p>
+        <p>Publicación, manual y 3 meses de soporte incluido.</p>
+        <p class="mono-label">día final</p>
       </li>
     </ol>
   </section>
 
-  <!-- ══════════ Comparativa · matriz transparente, estilo frame.work ══════════ -->
-  <section class="section section-alt">
+  <!-- ══════════ Comparativa ══════════ -->
+  <section data-accent="green" class="section section-alt">
     <div class="shell">
       <header class="section-head">
-        <p class="index">04 <span>/</span> por qué conception</p>
+        <p class="index">04 <span>/</span> por qué Conception</p>
         <h2 class="display h2">Compara y decide</h2>
       </header>
       <div class="table-wrap">
@@ -329,13 +219,13 @@
           <thead>
             <tr>
               <th scope="col">criterio</th>
-              <th scope="col" class="col-us">conception</th>
+              <th scope="col" class="col-us">Conception</th>
               <th scope="col">agencia tradicional</th>
               <th scope="col">freelance suelto</th>
             </tr>
           </thead>
           <tbody>
-            <tr><th scope="row">primera asesoría</th><td class="col-us">gratis, 30 min</td><td> cotización pagada</td><td>gratis</td></tr>
+            <tr><th scope="row">primera asesoría</th><td class="col-us">gratis, 30 min</td><td>cotización pagada</td><td>gratis</td></tr>
             <tr><th scope="row">diseño y código</th><td class="col-us">mismo equipo</td><td>separados por áreas</td><td>solo una parte</td></tr>
             <tr><th scope="row">archivos fuente</th><td class="col-us">siempre se entregan</td><td>rara vez</td><td>depende</td></tr>
             <tr><th scope="row">código y repositorio</th><td class="col-us">100% tuyo</td><td>licencia cerrada</td><td>riesgo de abandono</td></tr>
@@ -347,12 +237,12 @@
     </div>
   </section>
 
-  <!-- ══════════ Precios · tres planes planos ══════════ -->
-  <section id="precios" class="section shell">
+  <!-- ══════════ Precios ══════════ -->
+  <section id="precios" data-accent="cyan" class="section shell">
     <header class="section-head">
       <p class="index">05 <span>/</span> precios</p>
       <h2 class="display h2">Paquetes con precio cerrado</h2>
-      <p class="section-note">Todo incluye brief, concepto, producción, entrega y soporte. IVA no incluido.</p>
+      <p class="section-note">IVA no incluido.</p>
     </header>
 
     <div class="plan-grid">
@@ -397,16 +287,13 @@
     </div>
   </section>
 
-  <!-- ══════════ Contacto · formulario plano ══════════ -->
-  <section id="contacto" class="section section-alt">
+  <!-- ══════════ Contacto ══════════ -->
+  <section id="contacto" data-accent="orange" class="section section-alt">
     <div class="shell contact-grid">
       <div class="contact-copy">
         <p class="index">06 <span>/</span> contacto</p>
         <h2 class="display h2">Empieza tu proyecto</h2>
-        <p class="lead">
-          Cuéntanos qué necesitas. Respondemos en menos de 24 horas
-          con la agenda para tu brief gratuito.
-        </p>
+        <p class="lead">Cuéntanos qué necesitas. Respondemos en menos de 24 horas.</p>
         <dl class="hero-specs contact-specs">
           <div><dt>correo</dt><dd><a href="mailto:hola@conception.mx">hola@conception.mx</a></dd></div>
           <div><dt>teléfono</dt><dd><a href="tel:+525500000000">+52 55 0000 0000</a></dd></div>
@@ -457,13 +344,13 @@
   </section>
 </main>
 
-<!-- ══════════ Pie · técnico, mono, con coordenadas ══════════ -->
+<!-- ══════════ Pie ══════════ -->
 <footer class="footer">
   <div class="shell footer-grid">
     <div class="footer-brand">
-      <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true"></span>CONCEPTION</a>
+      <a class="brand" href="#top">Conception</a>
+      <p class="footer-note">Aseguramos la experiencia de quien interactúa desde el hardware hasta el software.</p>
       <p class="mono-label">19.4326° N, 99.1332° W · CDMX</p>
-      <p class="footer-note">Agencia de diseño gráfico y desarrollo web. Hecho en México.</p>
     </div>
     <nav class="footer-nav" aria-label="Secciones del sitio">
       <a href="#trabajo">Trabajo</a>
@@ -477,7 +364,7 @@
       <a href="https://www.linkedin.com/in/lott-campuzano/" target="_blank" rel="noopener">LinkedIn ↗</a>
       <a href="https://github.com/Lott-Campuzano" target="_blank" rel="noopener">GitHub ↗</a>
     </nav>
-    <p class="footer-copy mono-label">© <span id="anio">2026</span> conception · cc0</p>
+    <p class="footer-copy mono-label">© <span id="anio">2026</span> Conception · CC0</p>
   </div>
 </footer>
 
